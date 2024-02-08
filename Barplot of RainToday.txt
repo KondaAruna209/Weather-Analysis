@@ -1,0 +1,8 @@
+Barplot of RainToday:
+
+plt.figure(figsize=(8, 6))
+sns.countplot(df, x='RainToday')
+plt.title('Bar Plot of RainToday')
+plt.xlabel('Rain Today')
+plt.ylabel('Count')
+plt.show()
