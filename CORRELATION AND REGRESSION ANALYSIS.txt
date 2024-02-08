@@ -1,0 +1,27 @@
+CORRELATION AND REGRESSION ANALYSIS:
+
+correlation_matrix = df.corr()
+
+Plotting correlation heatmap:
+plt.figure(figsize=(10, 8))
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt=".2f")
+plt.title('Correlation Heatmap of Weather Parameters')
+plt.show()
+
+X = df.drop(columns=['MinTemp'])
+y = df['MinTemp']
+
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+y_pred = model.predict(X_test)
+
+mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+
+print("\nRegression Analysis Results:")
+print("Mean Squared Error (MSE):", mse)
+print("R-squared (R2):", r2)
