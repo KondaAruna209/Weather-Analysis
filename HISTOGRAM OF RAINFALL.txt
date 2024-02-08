@@ -1,0 +1,8 @@
+HISTOGRAM OF RAINFALL:
+
+plt.figure(figsize=(10, 6))
+sns.histplot(df['Rainfall'], kde=True)
+plt.title('Histogram of Rainfall')
+plt.xlabel('Rainfall')
+plt.ylabel('Frequency')
+plt.show()
